@@ -1,4 +1,4 @@
-class RootController < ApplicationController  
+class RootController < ApplicationController
   def index
     render text: html
   end
@@ -6,7 +6,7 @@ class RootController < ApplicationController
   private
 
   def html
-    $redis.get "your-app:index:#{current_revision_key}"
+    $redis.get "record-keeper-client:index:#{current_revision_key}"
   end
 
   def current_revision_key
@@ -16,4 +16,4 @@ class RootController < ApplicationController
       'current'
     end
   end
-end 
+end
