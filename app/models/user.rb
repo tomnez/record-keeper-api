@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  attr_accessor :password
-
   before_save :ensure_authentication_token
 
   # Include default devise modules. Others available are:
