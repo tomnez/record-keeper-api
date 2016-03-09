@@ -12,7 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'redis-rails'
 gem 'will_paginate', '~> 3.0.6'
-gem 'active_model_serializers'
+gem 'devise'
+gem 'rack-cors', :require => 'rack/cors'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
