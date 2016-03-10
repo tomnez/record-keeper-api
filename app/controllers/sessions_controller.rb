@@ -5,10 +5,10 @@ class SessionsController < Devise::SessionsController
     super do |user|
       if request.format.json?
         data = {
-          id: user.id,
           token: user.authentication_token,
           email: user.email,
-          admin: user.admin
+          admin: user.admin,
+          record: JSONAPI::Serializer.serialize(user)
         }
         render json: data, status: 201 and return
       end

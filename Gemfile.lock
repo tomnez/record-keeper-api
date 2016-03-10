@@ -69,6 +69,8 @@ GEM
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
     json (1.8.3)
+    jsonapi-serializers (0.6.5)
+      activesupport
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -190,6 +192,7 @@ DEPENDENCIES
   devise
   factory_girl_rails (~> 4.2.1)
   jbuilder (~> 2.0)
+  jsonapi-serializers
   pg
   pry-rails
   rack-cors
