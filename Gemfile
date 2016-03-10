@@ -14,6 +14,7 @@ gem 'redis-rails'
 gem 'will_paginate', '~> 3.0.6'
 gem 'devise'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'jsonapi-serializers'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -27,6 +28,8 @@ gem 'rack-cors', :require => 'rack/cors'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  gem 'pry-rails'
 
   gem 'bullet'
   gem 'factory_girl_rails', '~> 4.2.1'
