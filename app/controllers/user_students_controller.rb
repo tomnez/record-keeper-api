@@ -11,13 +11,23 @@ class UserStudentsController < ApplicationController
   respond_to :json
 
   def index
-    students = @user.students
-    render json: JSONAPI::Serializer.serialize(students, is_collection: true), status: 200
+    page = params[:page] || 1
+    per_page = params[:per_page] || 25
+    students = @user.students.paginate(:page => page, :per_page => per_page)
+    render json: JSONAPI::Serializer.serialize(students, is_collection: true, meta: get_meta(students)), status: 200
   end
 
   private
 
   def get_user
     @user = User.find(params[:user_id])
+  end
+
+  def get_meta(students)
+    {
+      total_pages: students.total_pages,
+      page: students.current_page,
+      per_page: students.per_page
+    }
   end
 end
