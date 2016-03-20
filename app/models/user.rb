@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   before_save :ensure_authentication_token
 
+  has_many :user_students
+  has_many :students, through: :user_students
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
