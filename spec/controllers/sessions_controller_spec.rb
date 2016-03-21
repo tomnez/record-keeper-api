@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe SessionsController, type: :controller do
-  include Devise::TestHelpers
-
   let!(:user) { FactoryGirl.create(:user, email: 'tom@tom.com', password: 'password', password_confirmation: 'password') }
 
   before do

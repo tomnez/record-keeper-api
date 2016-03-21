@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'devise'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -16,6 +17,8 @@ module RecordKeeperApi
         resource '*', :headers => :any, :methods => [:get, :post, :options]
       end
     end
+
+    config.autoload_paths << Rails.root.join('lib')
 
     config.middleware.use ActionDispatch::Flash
     # Settings in config/environments/* take precedence over those specified here.
