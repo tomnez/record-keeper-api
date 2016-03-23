@@ -22,12 +22,4 @@ class UserStudentsController < ApplicationController
   def get_user
     @user = User.find(params[:user_id])
   end
-
-  def get_meta(students)
-    {
-      total_pages: students.total_pages,
-      page: students.current_page,
-      per_page: students.per_page
-    }
-  end
 end

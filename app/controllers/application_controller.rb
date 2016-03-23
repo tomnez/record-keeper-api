@@ -2,12 +2,7 @@ class ApplicationController < ActionController::Base
   # protect_from_forgery with: :null_session
   protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
 
-  # before_filter :authenticate_user_from_token!
-
-  # Enter the normal Devise authentication path,
-  # using the token authenticated user if available
-
-  # before_filter :authenticate_user!
+  helper_method :get_meta
 
   private
 
@@ -20,5 +15,13 @@ class ApplicationController < ActionController::Base
         sign_in user, store: false
       end
     end
+  end
+
+  def get_meta(model)
+    {
+      total_pages: model.total_pages,
+      page: model.current_page,
+      per_page: model.per_page
+    }
   end
 end
