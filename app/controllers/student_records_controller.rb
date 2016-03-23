@@ -21,12 +21,4 @@ class StudentRecordsController < ApplicationController
   def get_records
     @records = Record.where(student_id: params[:student_id])
   end
-
-  def get_meta(records)
-    {
-      total_pages: records.total_pages,
-      page: records.current_page,
-      per_page: records.per_page
-    }
-  end
 end
