@@ -8,10 +8,10 @@ class UserSerializer
   has_many :students
 
   def type
-    "user" # Ember JSONAPIAdapter wants singular. Boo urns.
+    "user"
   end
 
   def self_link
-    "#{base_url}/#{type}s/#{id}" # Aaaand re-add the pluralization for relationship links.
+    "#{base_url}/#{type}s/#{id}"
   end
 end
