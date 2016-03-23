@@ -4,7 +4,7 @@ RSpec.describe UserStudentsController, type: :controller do
   include Devise::TestHelpers
 
   let!(:user) { FactoryGirl.create(:user, email: 'tom@tom.com', password: 'password', password_confirmation: 'password') }
-  let!(:students) { FactoryGirl.build_list(:student, 50) }
+  let!(:students) { FactoryGirl.build_list(:student, 26) }
 
   describe 'GET #index' do
     before do
